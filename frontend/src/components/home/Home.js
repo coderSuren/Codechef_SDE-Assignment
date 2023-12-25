@@ -58,15 +58,18 @@ export default function Home() {
             <Typography variant="h5" align="center" color="text.secondary" paragraph>
               We share our best ideas in our blog
             </Typography>
+
+            {!loggedInUser ? (
             <Stack
               sx={{ pt: 4 }}
               direction="row"
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained">Main call to action</Button>
-              <Button variant="outlined">Secondary action</Button>
+              <Button variant="contained" onClick={() => navigate('/signup')}>Create New Account</Button>
+              <Button variant="outlined" onClick={() => navigate('/signin')}>Login as Existing User</Button>
             </Stack>
+            ) : (<> </>) }
           </Container>
         </Box>
         <BlogSection></BlogSection>

@@ -22,8 +22,8 @@ const Header = () => {
           {!loggedInUser ? (
             
             <Button
-            variant="contained"
-            color="primary"
+            variant="outlined"
+            color="inherit"
             sx={{ ml: 'auto' }}
             href="/signin"
           >
@@ -34,12 +34,13 @@ const Header = () => {
                 Welcome {loggedInUser}!
             </Typography>
           <Button
-            variant="contained"
-            color="primary"
+            variant="outlined"
+            color="inherit"
             sx={{ ml: 'auto' }}
             onClick={() => {
                 if (window.confirm('Are you sure you want to logout?')){
                     updateLoggedInUser(null);
+                    window.location.href = '/';
                 }
             }}
           >
